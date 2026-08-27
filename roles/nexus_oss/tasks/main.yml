@@ -479,7 +479,7 @@
 - name: Create scheduled tasks (with backup task if relevant)
   ansible.builtin.include_tasks: create_task_each.yml
   with_items: "{{ nexus_scheduled_tasks + _nexus_backup_task | default([]) }}"
-  when: nexus_run_provisionning | default(true) | bool
+  when: nexus_run_provisioning | default(true) | bool
 
 - name: Migrate OrientDB to Postgres
   ansible.builtin.include_tasks: migrate_database.yml
